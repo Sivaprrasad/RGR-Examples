@@ -8,8 +8,7 @@ public class SoftwareSalesTest {
 	SoftwareSales s ;
 	
 
-//	R2:  Discount for 10-19 packages is 20%
-//	R2a:  Final price for 10-19 is calculated correctly
+
 //	R3:  Discount for 20-49 packages is 30%
 //	R3a:  Final price for 20-49 is calculated correctly
 //	R4:  Discount for 50-99 packages is 40%
@@ -23,11 +22,18 @@ public class SoftwareSalesTest {
 	public void testOneSoftwarePurchase() {
 		int expectedOutput = 99;
 		int q = 1;
-		assertEquals(expectedOutput, s.calculatePrice(q));
+		assertEquals(expectedOutput, s.calculatePrice(q), 0.01);
 //		 s = new SoftwareSales();
 		 
-		 
 	}
+	
+//	R2:  Discount for 10-19 packages is 20%
+//	R2a:  Final price for 10-19 is calculated correctly
+	@Test
+	public void test10SoftwarePurchase() {
+		double expectedOutput = 950.40;
+		int q = 12;
+		assertEquals(expectedOutput, s.calculatePrice(q), 0.01);
 
 	@Before
 	public void setUp() throws Exception {
